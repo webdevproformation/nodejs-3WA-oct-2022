@@ -35,3 +35,22 @@ it("tester la fonction exo4", () => {
     expect(exo4(4)).toContain(4);
     expect(exo4(5).length).toEqual(0);
 })
+
+// tester des objets 
+// toEqual()
+// expect(obj).toMatchObject({ id : 1 }); // est ce que l'objet contient bien propriété = 1
+//    expect(obj).toHaveProperty("id", 1); // est ce quel'objet dispose d'une propriété et est ce quelle vaut bien 1 
+
+// cas pratique créer une fonction getArticle (id)
+/* [
+    {id : 1 , titre : "Article 1" , contenu : "lorem ipsum"},
+    {id : 2 , titre : "Article 2" , contenu : "lorem ipsum"},
+    {id : 3 , titre : "Article 3" , contenu : "lorem ipsum"},
+] */
+
+/* la fonction retourne l'article concerné
+getArticle (1) => {id : 1 , titre : "Article 1" , contenu : "lorem ipsum"},
+getArticle (2) => {id : 2 , titre : "Article 1" , contenu : "lorem ipsum"},
+getArticle (4) => {},
+
+// créer la fonction de test qui permet de vérifier que votre implémentation est correcte */
