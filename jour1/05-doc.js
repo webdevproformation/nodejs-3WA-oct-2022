@@ -18,4 +18,16 @@ function isPair(chiffre){
     }
 }
 
+function fizzBuzz(max){
+    let resultat = max ;
+    if(max % 3 == 0){
+        resultat = "Fizz";
+    }else if(max % 5 == 0 ) {
+        resultat = "Buzz" ;
+    }
+    return resultat ;
+}
+
+
 exports.isPair = isPair ;
+exports.fizzBuzz = fizzBuzz ;
