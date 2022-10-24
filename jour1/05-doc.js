@@ -10,4 +10,12 @@
 // toEqual()
 
 
-// 
+function isPair(chiffre){
+    if(chiffre % 2 == 0){
+        return "Pair" ;
+    } else {
+        return "Impair";
+    }
+}
+
+exports.isPair = isPair ;

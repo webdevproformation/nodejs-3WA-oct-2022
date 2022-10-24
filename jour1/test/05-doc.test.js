@@ -28,3 +28,14 @@ it("différence entre toBe() et toEqual()" , () => {
 
 // chiffres à virgule 
 //.toBeCloseTo()
+
+const { isPair } = require("../05-doc");
+
+it("verif fonction isPair" , () => {
+
+    // dans nos traitements il faut réaliser AUTANT s'ASSERTION que de return dans notre fonction 
+    // minimum 2 tests pour pouvoir la vérifier correctement
+    expect(isPair(1)).toBe("Impair");
+    expect(isPair(2)).toBe("Pair");
+
+});
