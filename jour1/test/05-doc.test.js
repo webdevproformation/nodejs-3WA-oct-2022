@@ -67,5 +67,6 @@ it("verifier que le numéro de téléphone respecte le format fr" , () => {
     expect(getTel()).toMatch(/^0[1-9] \d{2} \d{2} \d{2} \d{2}$/);
 });
 
+// rdv 14h00 bon appétit  !!!
 
 
