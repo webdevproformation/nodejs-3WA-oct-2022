@@ -20,3 +20,10 @@ Snapshots:   0 total
 Time:        0.438 s
 Ran all test suites
  */
+
+test("test qui  refonctionne !!!" , () => {
+    const a = 2 ;
+    expect(a).toBe(2);
+    // a valeur reçue
+    // 2 valeur attendue => alors => erreur 
+});
