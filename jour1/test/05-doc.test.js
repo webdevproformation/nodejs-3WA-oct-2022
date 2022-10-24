@@ -61,6 +61,8 @@ it("tester la fonction fizzBuzz" , () => {
   [1,2,4,7,8].forEach(chiffre => expect(fizzBuzz(chiffre)).toBe(chiffre));
   [3,6,9].forEach(chiffre => expect(fizzBuzz(chiffre)).toBe("Fizz"));
   [5,10].forEach(chiffre => expect(fizzBuzz(chiffre)).toBe("Buzz"));
-})
+});
+
+
 
 
