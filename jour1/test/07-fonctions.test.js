@@ -1,5 +1,5 @@
 
-const { jour, exo4 } = require("../07-fonctions");
+const { jour, exo4, getArticles } = require("../07-fonctions");
 
 // fonction qui retourne un tableau
 
@@ -50,7 +50,14 @@ it("tester la fonction exo4", () => {
 
 /* la fonction retourne l'article concerné
 getArticle (1) => {id : 1 , titre : "Article 1" , contenu : "lorem ipsum"},
-getArticle (2) => {id : 2 , titre : "Article 1" , contenu : "lorem ipsum"},
+getArticle (2) => {id : 2 , titre : "Article 2" , contenu : "lorem ipsum"},
 getArticle (4) => {},
 
 // créer la fonction de test qui permet de vérifier que votre implémentation est correcte */
+
+test("tester la fonction getArticles", ()=> {
+    expect(getArticles(1)).toMatchObject({id : 1 , titre : "Article 1"});
+    expect(getArticles(2)).toHaveProperty("id", 2)
+    expect(getArticles(2)).toHaveProperty("titre", "Article 2");
+    expect(getArticles(4)).toEqual({});
+})

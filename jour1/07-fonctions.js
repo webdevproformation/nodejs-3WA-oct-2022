@@ -62,3 +62,13 @@ exports.valeurAbsolu = (chiffre) => {
 exports.exo4 = (max) => {
     return [1,2,3,4].filter((item) => item >= max )
 }
+
+exports.getArticles = (id) => {
+    const data =  [
+        {id : 1 , titre : "Article 1" , contenu : "lorem ipsum"},
+        {id : 2 , titre : "Article 2" , contenu : "lorem ipsum"},
+        {id : 3 , titre : "Article 3" , contenu : "lorem ipsum"},
+    ]
+    let resultat = data.filter( article  => article.id === id) ;
+    return resultat.length === 1 ? resultat[0] : {} ;
+}
