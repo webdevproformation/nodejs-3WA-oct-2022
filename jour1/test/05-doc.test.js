@@ -29,7 +29,7 @@ it("différence entre toBe() et toEqual()" , () => {
 // chiffres à virgule 
 //.toBeCloseTo()
 
-const { isPair , fizzBuzz } = require("../05-doc");
+const { isPair , fizzBuzz , getTel } = require("../05-doc");
 
 it("verif fonction isPair" , () => {
 
@@ -63,6 +63,9 @@ it("tester la fonction fizzBuzz" , () => {
   [5,10].forEach(chiffre => expect(fizzBuzz(chiffre)).toBe("Buzz"));
 });
 
+it("verifier que le numéro de téléphone respecte le format fr" , () => {
+    expect(getTel()).toMatch(/^0[1-9] \d{2} \d{2} \d{2} \d{2}$/);
+});
 
 
 

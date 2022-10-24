@@ -28,6 +28,11 @@ function fizzBuzz(max){
     return resultat ;
 }
 
+function getTel(){
+    return "06 01 02 01 01";
+}
+
 
 exports.isPair = isPair ;
 exports.fizzBuzz = fizzBuzz ;
+exports.getTel = getTel ;
