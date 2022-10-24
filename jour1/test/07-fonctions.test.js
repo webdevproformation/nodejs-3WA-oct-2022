@@ -92,3 +92,7 @@ it("tester la fonction connexion" , () => {
     expect(() => { connexion("azerty", "123") }).toThrow();
     expect(connexion("azerty" , "123456")).toMatch(/azerty$/);
 })
+
+// fonction de mock 
+// fonction de simulation !!
+// 15h40 bon café @ toute suite !!!
