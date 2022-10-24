@@ -11,7 +11,9 @@ test("verification fonction calcul" , () => {
 it( "exo 1 verif fonction division", () => {
     const a = division( 1 , 1 );
     expect(a).toBe(1);
-} )
+} );
+
+// bon café rdv 11h15 !! @ toute suite !!!
 
 // cas pratique 
 // ajouter une fonction dans le fichier 04-lib.js 
