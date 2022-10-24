@@ -6,10 +6,26 @@ NodeJS
 => un Discord ??
 => je peux vous passer le note de cours
 
-=> github 
+=> github : https://github.com/webdevproformation/nodejs-3WA-oct-2022
 
 
 => https://discord.gg/4F3e6kZs
+
+=> tout le monde a eu 2 semaines de cours 
+
+=> NodeJS // 
+
+=> test unitaire ???? 
+
+----------------------
+
+=> le support de cours du prof :
+https://formation.webdevpro.net/nodejs
+login : nodejs 
+password : nodejs
+
+
+
 
 
 
