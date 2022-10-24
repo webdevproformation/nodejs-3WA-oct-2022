@@ -46,7 +46,7 @@ exports.valeurAbsolu = (chiffre) => {
   
   // mock function
   
-  const db = require("./db")
+  // const db = require("./db")
   
   // la fonction réduction appel une ressource externe db.getUser()
   exports.reduction = ( obj ) => {
@@ -58,3 +58,7 @@ exports.valeurAbsolu = (chiffre) => {
     }
   }
   
+
+exports.exo4 = (max) => {
+    return [1,2,3,4].filter((item) => item >= max )
+}
