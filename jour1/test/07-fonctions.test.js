@@ -1,5 +1,9 @@
 
-const { jour, exo4, getArticles } = require("../07-fonctions");
+const { jour, 
+        exo4, 
+        getArticles, 
+        creationProfilUtilisateur,
+        connexion } = require("../07-fonctions");
 
 // fonction qui retourne un tableau
 
@@ -60,4 +64,31 @@ test("tester la fonction getArticles", ()=> {
     expect(getArticles(2)).toHaveProperty("id", 2)
     expect(getArticles(2)).toHaveProperty("titre", "Article 2");
     expect(getArticles(4)).toEqual({});
+})
+
+// fonction qui contiennent des throw 
+
+it("tester creationProfilUtilisateur", () => {
+    expect(() => {creationProfilUtilisateur()}).toThrow();
+    expect(() => {creationProfilUtilisateur("a@yahoo.fr")}).toThrow()
+    expect(creationProfilUtilisateur("a@yahoo.fr", "123456")).toMatchObject({
+        email : "a@yahoo.fr" ,
+        password : "123456"
+    })
+})
+
+// créer une fonction connexion( login , password )
+// si le login ou le password est manquant => émettre une exception message 401
+// si login et password sont saisit mais qu'ils ne sont pas égaux =
+// login = azerty
+// password = 123456
+// émettre une autre exception message 404
+// sinon => retourne le message Welcome azerty
+
+// réaliser la fonction et la fonction de test unitaire associé
+
+it("tester la fonction connexion" , () => {
+    expect(() => { connexion() }).toThrow();
+    expect(() => { connexion("azerty", "123") }).toThrow();
+    expect(connexion("azerty" , "123456")).toMatch(/azerty$/);
 })

@@ -72,3 +72,9 @@ exports.getArticles = (id) => {
     let resultat = data.filter( article  => article.id === id) ;
     return resultat.length === 1 ? resultat[0] : {} ;
 }
+
+exports.connexion = function(login , password){
+    if(!login || !password  ) throw new Error("erreur 401");
+    if(login != "azerty" || password != "123456") throw new Error("erreur 404");
+    return `Welcome ${login}`; 
+}
