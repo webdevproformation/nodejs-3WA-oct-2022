@@ -23,3 +23,17 @@ const getUsers = () => { // tester la fonction getUsers MAIS SANS ses dépendanc
 getU() */
 
 exports.getUsers = getUsers;
+
+const addUser = (user) => {
+    return axios.post("https://jsonplaceholder.typicode.com/users" , user)
+           .then(reponse => reponse.data)
+}
+
+/* async function postUser(){
+    const r = await addUser({nom : "Alain"})
+    console.log(r)
+}
+
+postUser() */
+
+exports.addUser = addUser;
