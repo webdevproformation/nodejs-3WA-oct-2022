@@ -56,3 +56,9 @@ const email1 = "a@yahoo.h";
 console.log(patternEmail.test(email1) , "ici");
 console.log(patternEmail.test("a@yahoo.fr") , "la");
 
+// créer une fonction qui retourne la valeur suivante  dans le fichier 05-doc.js
+// "01 01 01 01 01"
+// créer un test dans le fichier 05-doc.test.js 
+// tester que la  fonction retourne un pattern de numéro de téléphone français correct 
+
+
