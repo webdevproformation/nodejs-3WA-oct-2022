@@ -7,6 +7,7 @@
 
 const request = require("supertest");
 const { produitModel } = require("../model-produit");
+const { Types } = require("mongoose");
 
 let server ; // récupérer le serveur express que l'on a créé dans le fichier app.js 
 
@@ -74,8 +75,24 @@ describe( "/data" , () => {
             expect(req.body).toHaveProperty("isPublished" , false);
             expect(req.body).toHaveProperty("dt_creation" , dt.toISOString() );
         } )
+
+        it("GET :id invalid" , async () => {
+            const req = await request(server).get(`/1`);
+            expect(req.status).toBe(400);
+        })
+
+        it("GET :id introuvable" , async () => {
+            const idTrouvable = Types.ObjectId()
+            const req = await request(server).get(`/${idTrouvable}`);
+            expect(req.status).toBe(404);
+        })
+
     })
 } )
+
+// créer une nouveau test pour tester lorsque l'on a un id invalid (status == 400)
+// créer une nouveau test pour tester lorsque l'on a un id valid mais que le produit n'existe pas (status == 404)
+
 
 // Cas pratique dans la méthode get("/:id") dans le fichier route.js
 // effectuer deux vérifications avant de retourner la réponse 
