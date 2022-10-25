@@ -1,0 +1,21 @@
+créer une API =>
+- express 
+- mongoose
+- dotenv
+- base de données NoSQL sur internet => 
+- https://www.mongodb.com/atlas
+
+=> créer une base de données MongoDB 
+=> créer la base sur un programme Free
+=> créer des identifiants 
+=> login : demo
+=> password : mJjAvliE5gyu7qQB
+
+=> mongodb+srv://<username>:<password>@cluster0.hiwok3o.mongodb.net/?retryWrites=true&w=majority
+
+// url d'accès à notre base de données : 
+=> mongodb+srv://demo:mJjAvliE5gyu7qQB@cluster0.hiwok3o.mongodb.net/?retryWrites=true&w=majority
+
+// npm init --yes
+// installé Mongoose / express / dotenv
+// npm i -g nodemon
