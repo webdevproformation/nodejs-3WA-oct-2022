@@ -72,10 +72,17 @@ describe( "/data" , () => {
             expect(req.body).toHaveProperty("nom" , "Produit 1");
             expect(req.body).toHaveProperty("prix" , 1);
             expect(req.body).toHaveProperty("isPublished" , false);
-            expect(req.body).toHaveProperty("dt_creation" , dt );
+            expect(req.body).toHaveProperty("dt_creation" , dt.toISOString() );
         } )
     })
 } )
+
+// Cas pratique dans la méthode get("/:id") dans le fichier route.js
+// effectuer deux vérifications avant de retourner la réponse 
+// vérifier que l'id passé pour recherché le produit est un id valid (valid au format des données de mongoDB)
+// si pas bon => code 400 bad Request
+// si l'id est valid mais qu'il n'est pas de produit 
+// retourner une réponse 404 produit inconnu 
 
 // cas créer une nouvelle route dans le model produit qui permet de récupérer 1 seul produit en fonction de l'id mentionné dans l'url
 // créer le test d'intégration pour vérifier que le produit existe bien en base de données

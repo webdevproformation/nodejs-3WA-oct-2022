@@ -1,5 +1,6 @@
 const Router = require("express");
-const {produitModel , produitValide} = require("./model-produit")
+const {produitModel , produitValide} = require("./model-produit");
+const {Types} = require("mongoose")
 
 const router = Router();
 
@@ -33,7 +34,12 @@ router.post("/new" , async (req,rep) => {
 
 router.get("/:id" , async (req, rep) => {
     const id = req.params.id ;
+    if(!Types.ObjectId.isValid(id)) return rep.status(400).send("id du produit invalid");
+    // vérifier que l'id est correct 
     const produitRecherche = await produitModel.findOne({ _id : id});
+
+    if(!produitRecherche) return rep.status(404).send(`le produit ayant l'id ${id} n'existe pas`);
+
     rep.json(produitRecherche);
 })
 
