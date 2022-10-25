@@ -11,6 +11,7 @@ const app = express();
 // middleware
 app.use(express.json()); // mettre cette ligne AVANT l'appel de toutes les routes
 app.use("/" , require("./route.js"));
+app.use("/" , require("./route-user.js"));
 
 const server = app.listen(PORT , () => console.log(`le serveur express écoute sur le port ${PORT}`))
 
