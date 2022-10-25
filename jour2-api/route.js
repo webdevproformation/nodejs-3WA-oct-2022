@@ -1,5 +1,5 @@
 const Router = require("express");
-const {produitModel} = require("./model-produit")
+const {produitModel , produitValide} = require("./model-produit")
 
 const router = Router();
 
@@ -14,6 +14,18 @@ router.get("/data" , async (req,rep) => {
 
 router.post("/new" , async (req,rep) => {
     let nouveauProduit = req.body ;
+    // avant d'insérer les données dans la collection produit
+    // effectuer des vérifications 
+    const { value , error} = produitValide.validate(nouveauProduit , {abortEarly : false})
+    // si des valeurs transmises dans le client ne sont pas conforme => STOP 
+    if(error) {
+        let message = [];
+        error.details.forEach((erreur) => {
+            message.push(erreur.message)
+        })
+        return rep.status(400).json(message);
+    }
+    // sinon => effectue l'INSERTION dans la collection produit 
     nouveauProduit = new produitModel(nouveauProduit);
     nouveauProduit = await nouveauProduit.save();
     rep.json(nouveauProduit); 
