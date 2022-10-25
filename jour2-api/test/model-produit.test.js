@@ -56,9 +56,29 @@ describe( "/data" , () => {
             expect(req.body[1]).toHaveProperty("nom" , "Article 2");
         })
 
+        it("GET :id" , async () => {
+            const dt = new Date() ;
+            const produit = new produitModel({
+                "nom" : "Produit 1",
+                "prix" : 1,
+                "dt_creation" : dt,
+                "isPublished" : false
+            });
+            await produit.save();
+            // appeler la méthode que l'on a crée dans le fichier route.js 
+            const req = await request(server).get(`/${produit._id}`);
+            // effectuer les assertions 
+            expect(req.status).toBe(200);
+            expect(req.body).toHaveProperty("nom" , "Produit 1");
+            expect(req.body).toHaveProperty("prix" , 1);
+            expect(req.body).toHaveProperty("isPublished" , false);
+            expect(req.body).toHaveProperty("dt_creation" , dt );
+        } )
     })
-    
 } )
+
+// cas créer une nouvelle route dans le model produit qui permet de récupérer 1 seul produit en fonction de l'id mentionné dans l'url
+// créer le test d'intégration pour vérifier que le produit existe bien en base de données
 
 // Cas pratique 
 // ajouter une nouvelle méthode dans le fichier model-user.js

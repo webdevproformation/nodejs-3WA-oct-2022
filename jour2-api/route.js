@@ -30,7 +30,13 @@ router.post("/new" , async (req,rep) => {
     nouveauProduit = await nouveauProduit.save();
     rep.json(nouveauProduit); 
 });
-// bon appétit rdv 14h10 @ toute suite !!!!
+
+router.get("/:id" , async (req, rep) => {
+    const id = req.params.id ;
+    const produitRecherche = await produitModel.findOne({ _id : id});
+    rep.json(produitRecherche);
+})
+
 
 
 // créer la méthode POST via express qui permet de ajouter un nouveau projet dans la collection produits (stockée sur MongoDB Atlas )
