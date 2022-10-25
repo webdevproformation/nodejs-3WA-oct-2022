@@ -20,7 +20,6 @@ it("test unitaire de lib" , () => {
 // [ { name : "...." , id : 1 , adresse : "...." } , { name : "...." , id : 1 , adresse : "...." }   ]
 // utiliser les fonctions de mock de jest pour tester que votre fonction retourne bien ce type de donnée
 
-
 it("exo 1" , () => {
     const mockUseApi = jest.fn();
     const resultatApi = [ 
@@ -28,10 +27,8 @@ it("exo 1" , () => {
         { name : "Benois" , id : 2 , adresse : "76 rue de Marseille" }   
     ];
     mockUseApi.mockReturnValue(Promise.resolve(resultatApi));
-
     //assertion 
     expect(useApi(mockUseApi)).resolves.toEqual( ["Alain" , "Benois"] );
-
 })
 
 
