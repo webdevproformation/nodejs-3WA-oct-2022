@@ -54,7 +54,7 @@ it("test une fonction avec une dépendance en callback", () => {
 
 // réaliser une fonction de test qui va permettre de tester la fonction de recherche et qui simule le callback de cette fonction
 
-it("tester la fonction recherche avec une mock function" , () => {
+it("tester la fonction recherche avec une mock function" , async () => {
 
     const getDataSimuluation = jest.fn();
     const users = [
@@ -63,8 +63,10 @@ it("tester la fonction recherche avec une mock function" , () => {
     ];
     getDataSimuluation.mockReturnValue(Promise.resolve(users));
 
-    expect(recherche("Alain" , getDataSimuluation)).toEqual(users[0]);
+    await expect(recherche("Alain" , getDataSimuluation)).resolves.toEqual([users[0]]);
 })
+
+//bonne soirée !!! @ demain !!!
 
 
 
