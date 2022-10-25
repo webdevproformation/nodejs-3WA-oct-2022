@@ -16,7 +16,7 @@ router.post("/new" , async (req,rep) => {
     let nouveauProduit = req.body ;
     // avant d'insérer les données dans la collection produit
     // effectuer des vérifications 
-    const { value , error} = produitValide.validate(nouveauProduit , {abortEarly : false})
+    const { value , error } = produitValide.validate(nouveauProduit , {abortEarly : false})
     // si des valeurs transmises dans le client ne sont pas conforme => STOP 
     if(error) {
         let message = [];
@@ -29,7 +29,8 @@ router.post("/new" , async (req,rep) => {
     nouveauProduit = new produitModel(nouveauProduit);
     nouveauProduit = await nouveauProduit.save();
     rep.json(nouveauProduit); 
-})
+});
+// bon appétit rdv 14h10 @ toute suite !!!!
 
 
 // créer la méthode POST via express qui permet de ajouter un nouveau projet dans la collection produits (stockée sur MongoDB Atlas )

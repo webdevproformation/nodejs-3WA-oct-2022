@@ -11,5 +11,11 @@ router.post("/addUser" , async (req, rep) => {
     rep.json(newUser); 
 })
 
+router.get("/getAll" , async (req, rep) => {
+    const users = await userModel.find();
+    rep.json(users);
+})
+
+
 module.exports = router
 
