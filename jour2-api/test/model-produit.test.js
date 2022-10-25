@@ -90,6 +90,11 @@ describe( "/data" , () => {
     })
 } )
 
+// créer un système d'authentification via JWebToken 
+// créer un middleware autorisation.js 
+// => jsonwebtoken 
+
+
 // créer une nouveau test pour tester lorsque l'on a un id invalid (status == 400)
 // créer une nouveau test pour tester lorsque l'on a un id valid mais que le produit n'existe pas (status == 404)
 
