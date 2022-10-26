@@ -1,6 +1,7 @@
 const Router = require("express");
 const {produitModel , produitValide} = require("./model-produit");
 const {Types} = require("mongoose")
+const auth = require("./autorisation")
 
 const router = Router();
 
@@ -13,7 +14,7 @@ router.get("/data" , async (req,rep) => {
     rep.json(produits); 
 });
 
-router.post("/new" , async (req,rep) => {
+router.post("/new" , auth , async (req,rep) => {
     let nouveauProduit = req.body ;
     // avant d'insérer les données dans la collection produit
     // effectuer des vérifications 

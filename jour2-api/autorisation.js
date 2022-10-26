@@ -7,11 +7,18 @@ const auth = (req, rep , next) => {
     try{
         const decoded = jwt.verify(token, process.env.JWT);
         req.user = decoded ;
-        next()
+        next();
     }catch(ex){
         rep.status(400).send("Token reçu invalid"); 
     }
 }
 module.exports = auth ;
 
-// rdv demain 9h30 bonne soirée !!!!
+
+// créer une nouvelle route dans le fichier route-user.js 
+// connexion 
+// post 
+// email + password =>
+// recherché si l'utilisateur existe bien ???
+// retourner le message ok 
+// sinon retourner le message => ko 
