@@ -14,6 +14,15 @@ const auth = (req, rep , next) => {
 }
 module.exports = auth ;
 
+// créer un nouveau fichier de test => test unitaire 
+// autorisation.test.js
+// si j'ai un 3 retours possibles 
+// soit pas de entête => code status 401
+// soit pas de entête invalide => code status 400
+// soit pas de entête valide => req nouvelle propriété user qui contient
+// _id / email / pseudo 
+
+
 
 // créer une nouvelle route dans le fichier route-user.js 
 // connexion 
