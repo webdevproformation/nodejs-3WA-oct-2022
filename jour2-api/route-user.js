@@ -37,9 +37,13 @@ router.post("/connexion" , async (req, rep) => {
 
     if(userRecherche == null) return rep.status(404).send("identifiants invalids ko");
 
-    rep.json({msg : "ok"})
+    rep.json({msg : "ok"});
 })
 
+// cas pratique :
+// au lieu d'avoir un ok => 
+// le serveur me retourne un jsonwebtoken en + message ok 
+// genérer ce token et le retourner à l'utilisateur 
 
 module.exports = router
 
