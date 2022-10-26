@@ -21,7 +21,7 @@ module.exports = auth ;
 // soit pas de entête invalide => code status 400
 // soit pas de entête valide => req nouvelle propriété user qui contient
 // _id / email / pseudo 
-
+// rdv 14h00 bon appétit !!!!
 
 
 // créer une nouvelle route dans le fichier route-user.js 
