@@ -15,13 +15,13 @@ mise en production de notre api testé
 // https://www.heroku.com/
 
 // heroku cli => se connecter et créer un projet sur l' hébergeur 
-heroku login
+heroku login # attention les commandes il faut les réaliser dans un seul et même terminal 
 git init
-heroku create
+heroku create # attention dépendant de login
 git add --all
 git commit -m "message"
 git branch 
-git push heroku <main>
+git push heroku <main> # dépendant de login 
 
 heroku open => la page d'accueil du projet 
 heroku logs --tail  => voir les logs dans du serveur 
