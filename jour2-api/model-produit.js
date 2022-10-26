@@ -1,5 +1,5 @@
 const { Schema , model } = require("mongoose");
-const Joi = require("Joi");
+const Joi = require("joi");
 
 // schema de notre table (collection produit)
 const produit = new Schema({

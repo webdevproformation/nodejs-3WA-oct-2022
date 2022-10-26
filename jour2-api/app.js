@@ -1,9 +1,12 @@
 const express = require("express");
 const mongoose = require("mongoose");
+const cors = require("cors");
+const helmet = require("helmet");
+const compression = require("compression")
 require("dotenv").config();
-const url = process.env.NODE_ENV == "prod" ? process.env.URL_DB_PROD : process.env.URL_DB_DEV ;
+const url = process.env.NODE_ENV == "production" ? process.env.URL_DB_PROD : process.env.URL_DB_DEV ;
 
-const PORT = process.env.NODE_ENV == "prod" ? process.env.PORT : 3210 ; // déploiement hébergeur heroku
+const PORT =  process.env.PORT || 3210 ; // déploiement hébergeur heroku
 mongoose.connect( url  , { useNewUrlParser : true} )
         .then( () => {/* console.log("connexion à Atlas MongoDB réussie") */} )
         .catch(ex => console.log(ex))
@@ -11,6 +14,10 @@ mongoose.connect( url  , { useNewUrlParser : true} )
 const app = express();
 // middleware
 app.use(express.json()); // mettre cette ligne AVANT l'appel de toutes les routes
+app.use(compression());
+app.use(cors());
+app.use(helmet());
+
 app.use("/" , require("./route.js"));
 app.use("/" , require("./route-user.js"));
 

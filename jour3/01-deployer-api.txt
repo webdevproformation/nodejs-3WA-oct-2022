@@ -1,0 +1,40 @@
+Heroku => qui permet d'héberger des petits projets Nodejs
+en ligne et gratuitement 
+
+
+mise en production de notre api testé 
+
+// installer de nouvelles dépendances pour l'environnement de production
+// ajouter des dépendances à notre projet 
+// npm i helmet cors compression
+
+// préparer la base de données pour l'environnement de production 
+
+// => lancer la migration 
+// créer un compte sur le site heroku
+// https://www.heroku.com/
+
+// heroku cli => se connecter et créer un projet sur l' hébergeur 
+heroku login
+git init
+heroku create
+git add --all
+git commit -m "message"
+git branch 
+git push heroku <main>
+
+heroku open => la page d'accueil du projet 
+heroku logs --tail  => voir les logs dans du serveur 
+heroku run bash => accès SSH au serveur 
+saisir des lignes de commande linux ls / pwd / rmdir cat .....
+
+pour toutes les modifications
+modifier vos fichiers 
+git add -all
+git commit -m "nom modif"
+git push heroku <main>
+
+
+
+
+
