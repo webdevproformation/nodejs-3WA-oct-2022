@@ -19,6 +19,6 @@ document.querySelector("form").addEventListener("submit" , (e) => {
             .then(reponse => reponse.json())
             .then((data) => {
                 console.log(data);
-                
+                document.querySelector(".message").innerHTML = data.msg
             })
 })
