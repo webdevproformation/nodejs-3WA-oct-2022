@@ -31,6 +31,15 @@ router.get("/user/:id" , async (req, rep) => {
     rep.json(userRecherche);
 })
 
+router.post("/connexion" , async (req, rep) => {
+    const {email , password } = req.body;
+    const userRecherche = await userModel.findOne({email , password})
+
+    if(userRecherche == null) return rep.status(404).send("identifiants invalids ko");
+
+    rep.json({msg : "ok"})
+})
+
 
 module.exports = router
 
