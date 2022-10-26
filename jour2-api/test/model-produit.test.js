@@ -67,7 +67,7 @@ describe( "/data" , () => {
             });
             await produit.save();
             // appeler la méthode que l'on a crée dans le fichier route.js 
-            const req = await request(server).get(`/${produit._id}`);
+            const req = await request(server).get(`/produit/${produit._id}`);
             // effectuer les assertions 
             expect(req.status).toBe(200);
             expect(req.body).toHaveProperty("nom" , "Produit 1");
@@ -77,7 +77,7 @@ describe( "/data" , () => {
         } )
 
         it("GET :id invalid" , async () => {
-            const req = await request(server).get(`/1`);
+            const req = await request(server).get(`/produit/1`);
             expect(req.status).toBe(400);
         })
 

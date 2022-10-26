@@ -33,7 +33,7 @@ router.post("/new" , async (req,rep) => {
 });
 
 
-router.get("/:id" , async (req, rep) => {
+router.get("/produit/:id" , async (req, rep) => {
     const id = req.params.id ;
     if(!Types.ObjectId.isValid(id)) return rep.status(400).send("id du produit invalid");
     // vérifier que l'id est correct 

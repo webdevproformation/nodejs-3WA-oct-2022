@@ -47,6 +47,15 @@ dans le fichier package.json
 
 // https://jestjs.io/docs/cli#--runinband
 
+// créer un nouvelle méthode dans le fichier route-user.js
+// qui permet de récupérer un utilisateur dans la collection user via son id 
+// si l'id n'est pas correct => erreur 400 
+// si l'id est correct MAIS que le user n'existe pas => erreur 404 
+// si id est correct et que le user existe => { user }
+
+// ajouter les tests d'intégrations vérifier que cette fonctionnalité marche correctement 
+
+
 
 
 
