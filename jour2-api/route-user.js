@@ -36,9 +36,13 @@ router.post("/connexion" , async (req, rep) => {
     const userRecherche = await userModel.findOne({email , password})
 
     if(userRecherche == null) return rep.status(404).send("identifiants invalids ko");
+    const token = userRecherche.genererJWT()
 
-    rep.json({msg : "ok"});
+    rep.json({msg : "ok" , token });
 })
+// https://jwt.io/
+// eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzU4ZmJkM2M1MjVhYWI0ZmY2M2ZjMGYiLCJlbWFpbCI6ImNvbm5leGlvbkB5YWhvby5mciIsInBzZXVkbyI6ImNvbm5leGlvbiIsImlhdCI6MTY2Njc3NzQ1N30.Ou3aQWYjTL4mR_sk5oD9twFDRCNKohmptPNC4xMQ6-E
+
 
 // cas pratique :
 // au lieu d'avoir un ok => 
