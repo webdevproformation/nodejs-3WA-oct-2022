@@ -51,3 +51,9 @@ router.post("/connexion" , async (req, rep) => {
 
 module.exports = router
 
+// cas pratique
+// dans le projet API 
+// dans la route POST /addUser 
+// si la requête ne reçoit pas pseudo / email / password => retourner une erreur 400 
+// mettre en ligne cette modification
+// retester votre application via le formulaire de création de profil 
