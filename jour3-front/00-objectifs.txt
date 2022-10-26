@@ -1,0 +1,7 @@
+au lieu d'utiliser postman pour utiliser notre api
+
+vrai site internet 
+
+npm init --yes
+
+npm install pug express 

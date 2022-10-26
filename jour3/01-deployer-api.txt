@@ -34,6 +34,9 @@ git add -all
 git commit -m "nom modif"
 git push heroku <main>
 
+// rdv 15h40 => e2e 
+// réaliser une test de bout en bout !!! 
+
 
 
 
