@@ -5,7 +5,7 @@ const url = process.env.NODE_ENV == "prod" ? process.env.URL_DB_PROD : process.e
 
 const PORT = process.env.NODE_ENV == "prod" ? process.env.PORT : 3210 ; // déploiement hébergeur heroku
 mongoose.connect( url  , { useNewUrlParser : true} )
-        .then( () => console.log("connexion à Atlas MongoDB réussie") )
+        .then( () => {/* console.log("connexion à Atlas MongoDB réussie") */} )
         .catch(ex => console.log(ex))
 
 const app = express();

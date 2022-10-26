@@ -1,0 +1,52 @@
+des questions ???
+
+=> Quel est l'intérêt de mettre en place des tests ??? 
+
+test unitaire  ?? 
+test d'intégration ??
+
+Permet de vérifier / tester les fonctionnalités de l'application au fur et à mesure que l'on code !
+
+Vérifier que le code que l'on produit respecte bien des résultats que l'on attend 
+
+Refactorisation => 
+- réorganiser le code 
+- éviter les duplications de code 
+- toucher du code existe 
+=> casse d'ancienne suite à un oublie 
+
+=> repenser le code sans risque de perte de fonctionnalité 
+
+=> verifie que le code réponse aux attentes => rouge vert dans le terminal 
+=> réorganiser le code SANS risque => vert => rouge => vert 
+dans le terminal 
+
+Manière de coder 
+
+=> coder => test => Code First 
+=> test  => coder => TDD - Test Driven Development 
+=> test <=> code 
+
+---------------------------------
+
+API communiquer avec un base de données MongoDB 
+sur internet 
+
+=> deux collections produits / users 
+=> tests sur la collection produits 
+=> en même temps collection users 
+=> express qui est une dépendance de nos models
+
+=> message premiers tests OK 
+=> erreur => port 3210 est déjà utilisé ???? 
+
+jest --watch => le plus vite possible,  effectuée simultanément => erreur que l'on avait
+=> dire à jest de réaliser les tests l'un après l'autre / séquentiellement
+jest --watchAll --runInBand
+dans le fichier package.json
+
+// https://jestjs.io/docs/cli#--runinband
+
+
+
+

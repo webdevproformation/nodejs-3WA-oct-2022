@@ -16,7 +16,7 @@ describe( "/data" , () => {
     // préparation de notre test 
     // récupérer le serveur express 
     beforeEach(() => {
-        server = require("../app"); 
+         server = require("../app"); 
     });
 
     afterEach( async () => {

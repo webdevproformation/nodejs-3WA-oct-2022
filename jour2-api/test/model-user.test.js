@@ -3,9 +3,9 @@ let server ;
 
 describe("tester getAllUser" , () => {
     beforeEach(() => {
-        server = require("../app");
+         server = require("../app");
     });
-    afterEach(() => {
+    afterEach( () => {
         server.close()
     });
     describe("GET" , () => {
@@ -13,7 +13,7 @@ describe("tester getAllUser" , () => {
              const req = await request(server).get("/getAll");
             // server.close()
             // console.log(req.status , req.body);
-             expect(req.status).toEqual(200);
+             expect(req.status).toEqual(400);
         })
     })
 
