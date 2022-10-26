@@ -1,0 +1,25 @@
+extends layout 
+
+block page_titre
+    title Créer un nouveau profil utilisateur
+block page_meta
+    meta(name="description" value="Créer un nouveau profil utilisateur")
+block page_css
+    link(rel="stylesheet" href="style.css")
+block page_contenu
+    h1.text-center Créer un nouveau profil utilisateur
+    div.d-flex.justify-content-center.my-4
+        form.w-50
+            div.mb-3 
+                label(for="pseudo" class="form-label") votre pseudo
+                input(type="text" placeholder="pseudo" class="form-control" id="pseudo" name="pseudo")
+            div.mb-3 
+                label(for="email" class="form-label") votre email
+                input(type="email" placeholder="email" class="form-control" id="email" name="email")
+            div.mb-3 
+                label(for="password" class="form-label") votre password
+                input(type="password" placeholder="password" class="form-control" id="password" name="password")
+            div.mb-3.text-center
+                input(type="submit" class="btn btn-primary") 
+
+    script(src="creer-user.js")
