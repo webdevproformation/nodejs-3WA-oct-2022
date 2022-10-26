@@ -1,5 +1,5 @@
 const Router = require("express");
-const { userModel } = require("./model-user");
+const { userModel , userJoiSchema } = require("./model-user");
 const { Types } = require("mongoose");
 
 
@@ -7,6 +7,8 @@ const router = Router();
 
 router.post("/addUser" , async (req, rep) => {
     let newUser = req.body ;
+    const { value, error } = userJoiSchema.validate(newUser , {abortEarly:false})
+    if(error) return rep.status(400).json({msg : "il manque des informations pour créer un profil user"})
     newUser = new userModel(newUser)
     newUser = await newUser.save();
     rep.json(newUser); 
