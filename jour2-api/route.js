@@ -45,7 +45,11 @@ router.get("/produit/:id" , async (req, rep) => {
     rep.json(produitRecherche);
 })
 
-
+// cas pratique :
+// créer les tests d'intégration pour tester la création de produit 
+// envoie pas de token => erreur 401
+// envoie un token mais erroné erreur 400
+// envoie un token valide et produit valide => réponse 200 du serveur 
 
 // créer la méthode POST via express qui permet de ajouter un nouveau projet dans la collection produits (stockée sur MongoDB Atlas )
 
