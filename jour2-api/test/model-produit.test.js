@@ -7,16 +7,24 @@
 
 const request = require("supertest");
 const { produitModel } = require("../model-produit");
+const { userModel } = require("../model-user");
 const { Types } = require("mongoose");
 
 let server ; // récupérer le serveur express que l'on a créé dans le fichier app.js 
+let nouveauProduit ;
 
-describe( "/data" , () => {
+describe( "/tester le model produit" , () => {
 
     // préparation de notre test 
     // récupérer le serveur express 
     beforeEach(() => {
          server = require("../app"); 
+         nouveauProduit = {
+            "nom" : "Play Station 8",
+            "prix" : 1400,
+            "dt_creation" : "2016-05-18T16:00:00Z",
+            "isPublished" : true 
+        }
     });
 
     afterEach( async () => {
@@ -86,8 +94,45 @@ describe( "/data" , () => {
             const req = await request(server).get(`/${idTrouvable}`);
             expect(req.status).toBe(404);
         })
-
     })
+    describe("POST" ,  () => {
+        it( "créer un produit sans jwt" , async () => {
+            const req = await request(server).post(`/new`).send(nouveauProduit);
+            expect(req.status).toBe(401);
+        } )
+        
+        it("créer un produit avec un jwt invalid" , async () => {
+            const token = 1 ;
+            const req = await request(server).post(`/new`).set("x-auth-token", token).send(nouveauProduit);
+            expect(req.status).toBe(400);
+        })
+
+        it("créer un produit avec un jwt valide" , async () => {
+            // créer un utilisateur
+            let user = new userModel( {
+                pseudo : "aaaaa",
+                email : "a@yahoo.fr",
+                password : "123456"
+            } )
+            user = await  user.save()
+            // se connecter 
+            const reqConnexion = await request(server).post("/connexion").send({
+                email : user.email ,
+                password : user.password
+            })
+            // récupérer le jwt valide
+            const token =  reqConnexion.body.token ;
+
+            // effectuer le post 
+            const reqAddProduit = await request(server).post(`/new`)
+                                                       .set("x-auth-token", token)
+                                                       .send(nouveauProduit);
+            // réponse 200 du serveur 
+            expect(reqAddProduit.status).toBe(200);
+
+        })
+    })
+
 } )
 
 // créer un système d'authentification via JWebToken 
