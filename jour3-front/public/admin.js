@@ -38,4 +38,25 @@ document.querySelector("form").addEventListener("submit" , e => {
 
 });
 
+document.querySelectorAll(".suppr").forEach( btn => {
+    btn.addEventListener("click" , e => {
+        e.preventDefault();
+        const id = e.target.href.split("/").at(-1);
+        const option = {
+            method : "DELETE",
+            headers : {
+                "x-auth-token" : localStorage.getItem("token")
+            }
+        }
+        
+        fetch(`https://lit-island-18380.herokuapp.com/produit/${id}` , option )
+            .then( reponse => reponse.json() )
+            .then( () => {
+                // sélectionner la balise tr parent du bouton cliqué => supprimer la ligne du tableau
+                e.target.closest("tr").remove();
+            } ) 
+                
+    })
+})
+
 // bon appétit rdv 14h00 !!!!

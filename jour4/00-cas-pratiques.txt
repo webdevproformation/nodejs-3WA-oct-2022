@@ -96,7 +96,7 @@ une fois réalisé la fonctionnalité => push sur heroku
 Cas pratique :
 
 - récupérer l'id du produit à supprimer 
-- requête ajax pour supprimer le prduit concerné 
+- requête ajax pour supprimer le produit concerné 
 - requete mettre à jour la liste des produits dans la page 
 
 // rdv 15h45 bon café @ toute suite !!
