@@ -7,4 +7,16 @@ block page_meta
 block page_contenu
     h1.text-center Back Office
     
+    h2.text-center.mt-4 Ajouter un nouveau produit 
+    .d-flex.justify-content-center
+        form.w-50
+            input(type="text" name="nom" class="mb-3 form-control" id="nom" placeholder="nom produit")
+            input(type="number" name="prix" class="mb-3 form-control" id="prix" placeholder="prix produit")
+            input(type="date" name="dt_creation" class="mb-3 form-control" id="dt_creation" placeholder="dt_creation")
+            .mb-3.d-flex.align-items-center
+                input(type="checkbox" name="isPublished" class="form-check-input me-2" id="isPublished" checked)
+                label(for="isPublished") Publié l'article
+            .text-center
+                input(type="submit" class="btn btn-outline-primary")
+
     script(src="admin.js")
