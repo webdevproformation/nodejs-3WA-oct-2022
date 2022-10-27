@@ -48,3 +48,22 @@ si la connexion s'est bien passée => afficher dans la barre de menu
 les liens Admin et Déconnexion (et masquer Connexion)
 si on n'est pas connexion (ou déconnecté) => afficher dans la barre de menu uniquement le lien Connexion (masquer les liens Admin et Déconnexion)
 
+---------------------------
+
+cas pratique 
+
+ajouter dans la page d'admin un formulaire qui va permettre de créer un nouveau produit
+
+nom  => input de type texte
+prix  => input de type texte
+dt_creation => input de type date
+isPublished => checkbox 
+
+bouton de soumission
+
+lorsque vous soumettez le formulaire en AJAX ajouter un héder spécial 
+ce qui est stocké dans le localStorage
+
+
+
+
