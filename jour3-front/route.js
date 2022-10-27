@@ -29,15 +29,18 @@ module.exports = function(app){
     })
 
     app.get("/admin" , (req , rep) => {
-
         axios.get("https://lit-island-18380.herokuapp.com/data")
             .then(({data}) => {
                 //console.log(data);
 
                 rep.render("admin" , { catalogue : data })
             })
+    })
 
-        
+    app.get("/delete/:id" , (req, rep) => {
+        const id = req.params.id ;
+        console.log(id);
+        rep.render("admin" , {catalogue : []})
     })
 
     // créer une autre page créer de profil utilisateur
