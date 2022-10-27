@@ -43,5 +43,5 @@ block page_contenu
                     td #{status}
                     td 
                         a(href="#" class="btn btn-warning me-2 btn-sm") update 
-                        a(href="#" class="btn btn-danger btn-sm") delete 
+                        a(href=`/delete/${produit._id}` class="btn btn-danger btn-sm") delete 
     script(src="admin.js")

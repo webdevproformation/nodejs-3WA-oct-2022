@@ -45,6 +45,22 @@ router.get("/produit/:id" , async (req, rep) => {
     rep.json(produitRecherche);
 })
 
+router.delete("/produit/:id" , auth , async(req , rep) => {
+
+    const id = req.params.id ;
+
+    if(!Types.ObjectId.isValid(id)) return rep.status(400).json({msg : "id invalid"})
+
+    let produitASupprimer = await produitModel.findByIdAndRemove(id);
+
+    if(produitASupprimer == null)  return rep.status(404).json({msg : "produit introuvable"})
+
+    // produitASupprimer = produitASupprimer.deleteOne()
+
+    rep.json({msg : "ok" , produit : produitASupprimer});
+
+} )
+
 // cas pratique :
 // créer les tests d'intégration pour tester la création de produit 
 // envoie pas de token => erreur 401
