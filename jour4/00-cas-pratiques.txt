@@ -38,3 +38,13 @@ si c'est pas présent => redirection vers la page de connexion
 + ajouter dans le menu un lien déconnexion => lorsque vous cliquez dessus => supprimer la valeur token du localStorage
 
 // rdv 11h20 bon café !!!
+
+---------------------------
+
+Cas pratique :
+
+faire une menu dynamique :
+si la connexion s'est bien passée => afficher dans la barre de menu 
+les liens Admin et Déconnexion (et masquer Connexion)
+si on n'est pas connexion (ou déconnecté) => afficher dans la barre de menu uniquement le lien Connexion (masquer les liens Admin et Déconnexion)
+
