@@ -8,3 +8,15 @@ dans le projet de front
 
 => utilisez Bootstrap pour réaliser cette mise en forme 
 => https://getbootstrap.com/docs/5.2/components/navbar/
+
+
+---------------------------
+
+cas pratique
+
+créer un nouveau formulaire pour la page de connexion 
+formulaire avec 2 champs email + password 
+lorsque vous soumettez le formulaire => faire une requête ajax vers l'API que l'on a créé
+le retour de l'API si tout est OK email et password correct => récupérer le JWT et le stocker dans 
+le localStorage du navigateur 
+sinon afficher un message pour dire => identifiant incorrect 
