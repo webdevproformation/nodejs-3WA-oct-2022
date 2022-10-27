@@ -101,4 +101,19 @@ Cas pratique :
 
 // rdv 15h45 bon café @ toute suite !!
 
+---------------------------
+
+Update 
+
+- récupérer l'id du produit à modifier 
+- ajouter une nouvelle méthode dans l'API pour réaliser la mise à jour 
+
+
+
+- ajouter une nouvelle page dans le front pour pouvoir saisir les informations du produit 
+- valider et être redirigé vers la page d'accueil de l'admin 
+
+
+
+
 
