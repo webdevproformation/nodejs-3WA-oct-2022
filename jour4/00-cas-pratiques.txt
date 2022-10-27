@@ -1,0 +1,10 @@
+dans le projet de front 
+
+=> créer une barre de menu ayant 3 liens
+
+=> Accueil
+=> le formulaire de création de profil utilisateur "créer compte user"
+=> connexion 
+
+=> utilisez Bootstrap pour réaliser cette mise en forme 
+=> https://getbootstrap.com/docs/5.2/components/navbar/
