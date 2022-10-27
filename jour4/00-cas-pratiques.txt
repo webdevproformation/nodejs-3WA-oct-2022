@@ -91,6 +91,14 @@ si le produit existe ET que le id est valide => suppression => message ok en for
 une fois réalisé la fonctionnalité => push sur heroku 
 
 
+---------------------------
 
+Cas pratique :
+
+- récupérer l'id du produit à supprimer 
+- requête ajax pour supprimer le prduit concerné 
+- requete mettre à jour la liste des produits dans la page 
+
+// rdv 15h45 bon café @ toute suite !!
 
 
