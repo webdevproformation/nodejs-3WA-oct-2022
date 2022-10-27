@@ -19,6 +19,9 @@ module.exports = function(app){
     app.get("/creer-user" , (req, rep) => {
         rep.render("creer-user")
     })
+    app.get("/connexion" , (req, rep) => {
+        rep.render("connexion")
+    })
 
     // créer une autre page créer de profil utilisateur
     // page vous avez un formulaire 

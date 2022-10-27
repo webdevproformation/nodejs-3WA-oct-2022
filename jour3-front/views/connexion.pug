@@ -1,0 +1,16 @@
+extends layout 
+
+block page_titre
+    title Accéder au back office
+block page_meta
+    meta(name="description" value="Accéder au back office")
+block page_contenu
+    h1.text-center Connexion
+    .d-flex.justify-content-center
+        form.w-50 
+            input(type="text" placeholder="votre email" name="email" id="email" class="form-control my-3")
+            input(type="password" placeholder="votre password" name="password" id="password" class="form-control mb-3")
+            .text-center
+                input(type="submit" class="btn btn-outline-dark")
+
+    script(src="connexion.js")

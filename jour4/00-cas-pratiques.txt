@@ -20,3 +20,5 @@ lorsque vous soumettez le formulaire => faire une requête ajax vers l'API que l
 le retour de l'API si tout est OK email et password correct => récupérer le JWT et le stocker dans 
 le localStorage du navigateur 
 sinon afficher un message pour dire => identifiant incorrect 
+
+https://github.com/webdevproformation/nodejs-3WA-oct-2022
