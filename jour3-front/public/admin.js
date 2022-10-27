@@ -34,6 +34,8 @@ document.querySelector("form").addEventListener("submit" , e => {
             .then(console.log)
             .catch((ex) => {
                 console.log("il y a une erreur" , ex);
-            })
+            });
 
-})
+});
+
+// bon appétit rdv 14h00 !!!!
