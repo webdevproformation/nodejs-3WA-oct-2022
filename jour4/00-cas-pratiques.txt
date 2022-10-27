@@ -88,6 +88,7 @@ si on envoie un id invalid => retourne une erreur 400 bad Request
 si le produit envoie un id valide mais n'existe pas => retourne une erreur 404
 si le produit existe ET que le id est valide => suppression => message ok en format json  
 
+une fois réalisé la fonctionnalité => push sur heroku 
 
 
 
