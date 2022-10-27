@@ -1,6 +1,7 @@
 const express = require("express");
 
 const path = require("path");
+const axios = require("axios");
 
 module.exports = function(app){
 
@@ -28,7 +29,15 @@ module.exports = function(app){
     })
 
     app.get("/admin" , (req , rep) => {
-        rep.render("admin")
+
+        axios.get("https://lit-island-18380.herokuapp.com/data")
+            .then(({data}) => {
+                //console.log(data);
+
+                rep.render("admin" , { catalogue : data })
+            })
+
+        
     })
 
     // créer une autre page créer de profil utilisateur

@@ -19,4 +19,29 @@ block page_contenu
             .text-center
                 input(type="submit" class="btn btn-outline-primary")
 
+    hr
+    h2.text-center Catalogue
+    table.table.table-striped
+        thead
+            tr 
+                th id
+                th nom
+                th prix
+                th dt_creation 
+                th status 
+                th actions 
+        tbody
+            each produit in catalogue 
+                tr 
+                    td #{produit._id} 
+                    td #{produit.nom} 
+                    - var prixFr = produit.prix.toFixed(2) + " € HT"
+                    td #{prixFr} 
+                    - var dtFr = new Date(produit.dt_creation).getDate() + "/" +  (new Date(produit.dt_creation).getMonth() + 1) + "/" + new Date(produit.dt_creation).getFullYear()
+                    td #{dtFr} 
+                    - var status = produit.isPublished ? "publié" : "non publié"
+                    td #{status}
+                    td 
+                        a(href="#" class="btn btn-warning me-2 btn-sm") update 
+                        a(href="#" class="btn btn-danger btn-sm") delete 
     script(src="admin.js")
