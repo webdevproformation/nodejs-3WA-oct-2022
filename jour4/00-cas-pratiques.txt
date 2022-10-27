@@ -64,6 +64,22 @@ bouton de soumission
 lorsque vous soumettez le formulaire en AJAX ajouter un héder spécial 
 ce qui est stocké dans le localStorage
 
+---------------------------
+
+Cas pratique :
+
+Sous le formulaire de création de produit 
+Ajouter un tableau avec la liste des produits 
+requete GET /data 
+
+entête du tableau
+id / nom / prix / dt_creation / isPublished / action 
+
+corps du tableau 
+id / nom / prix / dt_creation / isPublished / 2 boutons :  modifier supprimer
+
+
+
 
 
 
