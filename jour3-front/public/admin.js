@@ -48,7 +48,7 @@ document.querySelectorAll(".suppr").forEach( btn => {
                 "x-auth-token" : localStorage.getItem("token")
             }
         }
-        
+
         fetch(`https://lit-island-18380.herokuapp.com/produit/${id}` , option )
             .then( reponse => reponse.json() )
             .then( () => {
@@ -58,5 +58,15 @@ document.querySelectorAll(".suppr").forEach( btn => {
                 
     })
 })
+
+/* document.querySelectorAll(".update").forEach( btn => {
+    btn.addEventListener("click" , e => {
+        e.preventDefault();
+
+        const id = e.target.href.split("/").at(-1);
+        console.log(id);
+
+    })
+}) */
 
 // bon appétit rdv 14h00 !!!!

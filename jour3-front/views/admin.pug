@@ -42,6 +42,6 @@ block page_contenu
                     - var status = produit.isPublished ? "publié" : "non publié"
                     td #{status}
                     td 
-                        a(href="#" class="btn btn-warning me-2 btn-sm update") update 
+                        a(href=`/update/${produit._id}` class="btn btn-warning me-2 btn-sm update") update 
                         a(href=`/delete/${produit._id}` class="btn btn-danger btn-sm suppr") delete 
     script(src="admin.js")
