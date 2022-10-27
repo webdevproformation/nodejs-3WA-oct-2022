@@ -23,6 +23,14 @@ module.exports = function(app){
         rep.render("connexion")
     })
 
+    app.get("/deconnexion" , (req, rep) => {
+        rep.render("deconnexion")
+    })
+
+    app.get("/admin" , (req , rep) => {
+        rep.render("admin")
+    })
+
     // créer une autre page créer de profil utilisateur
     // page vous avez un formulaire 
     // 3 champs 

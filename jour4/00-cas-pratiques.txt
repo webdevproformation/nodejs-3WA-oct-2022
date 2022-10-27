@@ -22,3 +22,19 @@ le localStorage du navigateur
 sinon afficher un message pour dire => identifiant incorrect 
 
 https://github.com/webdevproformation/nodejs-3WA-oct-2022
+
+
+---------------------------
+
+Cas pratique 
+
+créer une nouvelle page 
+accessible via l'adresse admin 
+
+vérifier qu'il y a bien une valeur dans le localStorage 
+si c'est ok affiche la page 
+si c'est pas présent => redirection vers la page de connexion 
+
++ ajouter dans le menu un lien déconnexion => lorsque vous cliquez dessus => supprimer la valeur token du localStorage
+
+// rdv 11h20 bon café !!!

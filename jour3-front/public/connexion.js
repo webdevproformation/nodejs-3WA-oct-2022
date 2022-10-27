@@ -17,8 +17,8 @@ document.querySelector("form").addEventListener("submit" , e => {
     fetch( "https://lit-island-18380.herokuapp.com/connexion" , options )
             .then(reponse => reponse.json())
             .then(({token}) => {
-                
-                localStorage.setItem("token" , token)
+                localStorage.setItem("token" , token);
+                window.location.href = "/admin"
             })
             .catch((ex) => {
                 console.log("il y a une erreur" , ex);
