@@ -48,3 +48,12 @@ dans la page d'accueil du client afficher tous les produits qui sont disponibles
 afficher uniquement ceux qui sont le status publié à true 
 si vous n'avez aucun produit publié et true => affiche un message disant "Aucun produit disponible pour l'instant"
 
+--- 
+
+Cas pratique :
+
+Dans la page d'accueil à la page des ... => lien hypertexte => voir la page produit 
+
+Créer une nouvelle route dans le front qui permet d'afficher uniquement 1 seul produit 
+
+et vous affichez un seul produit 
