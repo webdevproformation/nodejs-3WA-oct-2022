@@ -61,7 +61,7 @@ router.delete("/produit/:id" , auth , async(req , rep) => {
 
 } )
 
-router.put("/produit/:id" , auth , async (req, rep) => {
+router.put("/produit/:id" , auth  , async (req, rep) => {
     // récupérer l'id du produit à mettre à jour
     const id = req.params.id ;
     const produit = req.body ;
@@ -92,6 +92,28 @@ router.put("/produit/:id" , auth , async (req, rep) => {
     rep.json({msg : "ok" , produit : produitAMettreAJour});
 
 })
+
+router.post( "/like/:id" , async (req, rep) => {
+    const id = req.params.id ;
+
+    if(!Types.ObjectId.isValid(id)) return rep.status(400).json({msg : "id invalid pour le produit"});
+
+    let produitAMettreAJour = await produitModel.findById(id);
+
+    if(produitAMettreAJour == null) return rep.status(404).json({msg : "produit introuvable"});
+
+    if(produitAMettreAJour.like){
+        produitAMettreAJour.like++ ;
+    }else {
+        produitAMettreAJour.like = 1 ;
+    }
+    
+    const resultat = await produitAMettreAJour.save();
+
+    rep.json(resultat)
+
+} )
+
 
 // cas pratique :
 // créer les tests d'intégration pour tester la création de produit 
