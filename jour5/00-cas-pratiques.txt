@@ -31,3 +31,11 @@ et les transférer vers votre API
 vérifier au préalable que tous les champs sont remplis avant de lancer al requête AJAX 
 
 // rdv 11h25 bon café @ toute suite !!!
+
+
+--- 
+
+Cas pratique une fois que la mise à jour est effectuée 
+
+=> afficher un message pour dire que c'est fait 
+=> rediriger vers la page d'accueil de l'administration 
