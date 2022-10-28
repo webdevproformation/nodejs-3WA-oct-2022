@@ -18,5 +18,6 @@ block page_contenu
                         img(src="https://via.placeholder.com/500x200?text=img produit", alt="")
                         - var prixFr = produit.prix.toFixed(2) + " € HT"
                         .card-body.text-end #{prixFr} 
-                        footer.card-footer ... 
+                        footer.card-footer 
+                            a(href=`/produit/${produit._id}` class="btn btn-success btn-sm") voir le produit 
         - }

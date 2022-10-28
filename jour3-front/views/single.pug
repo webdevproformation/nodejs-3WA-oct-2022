@@ -1,0 +1,17 @@
+extends layout 
+
+block page_titre
+    title détail produit  #{produit.nom}
+block page_meta
+    meta(name="description" value=`détail produit ${produit.nom}`)
+block page_contenu
+    .row.mt-3
+        .col-3 
+            img(src="https://via.placeholder.com/500x400?text=img produit", alt="" class="img-fluid rounded")
+        .col-9 
+            h1 #{produit.nom.toUpperCase()}
+            h2 Détails :
+            ol 
+                - var prixFr = produit.prix.toFixed(2) + " € HT"
+                li prix du produit : #{prixFr}
+                li créé le #{produit.dt_creation}

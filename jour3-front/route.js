@@ -37,6 +37,14 @@ module.exports = function(app){
                 rep.render("admin" , { catalogue : data })
             })
     })
+    app.get("/produit/:id", (req, rep) => {
+        const id = req.params.id ;
+        axios.get(`https://lit-island-18380.herokuapp.com/produit/${id}`)
+            .then(({data}) => {
+                console.log(data);
+                rep.render("single" , { produit : data })
+            })
+    })
 
     app.get("/update/:id" , (req , rep) => {
         const id = req.params.id ;
