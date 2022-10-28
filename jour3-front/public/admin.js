@@ -31,7 +31,29 @@ document.querySelector("form").addEventListener("submit" , e => {
 
     fetch( "https://lit-island-18380.herokuapp.com/new" , options )
             .then(reponse => reponse.json())
-            .then(console.log)
+            .then((data) => {
+               document.querySelector(".message").innerHTML = `<div class="alert alert-success my-3">nouveau produit ajouté en Base de Données</div>`;
+               console.log(data);
+               const ligne = `
+                <tr>
+                    <td>${data._id}</td>
+                    <td>${data.nom}</td>
+                    <td>${data.prix.toFixed(2)} € HT</td>
+                    <td>${new Date(data.dt_creation).getDate() + "/" +  (new Date(data.dt_creation).getMonth() + 1) + "/" + new Date(data.dt_creation).getFullYear()}</td>
+                    <td>${data.isPublished == true ? "publié" : "non publié"}</td>
+                    <td>
+                        <a href="/update/${data._id}" class="btn btn-sm btn-warning me-2">update</a>
+                        <a href="/delete/${data._id}" class="btn btn-sm btn-danger">delete </a>
+                    </td>
+                </tr>
+               `;
+               e.target.reset(); // vider le formulaire 
+
+               document.querySelector("tbody").insertAdjacentHTML("beforeend" , ligne)
+               setTimeout(() => {
+                document.querySelector(".message").innerHTML = "";
+               }, 2000)
+            })
             .catch((ex) => {
                 console.log("il y a une erreur" , ex);
             });
