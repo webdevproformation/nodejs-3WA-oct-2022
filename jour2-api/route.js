@@ -93,7 +93,7 @@ router.put("/produit/:id" , auth  , async (req, rep) => {
 
 })
 
-router.post( "/like/:id" , async (req, rep) => {
+router.get( "/like/:id" , async (req, rep) => {
     const id = req.params.id ;
 
     if(!Types.ObjectId.isValid(id)) return rep.status(400).json({msg : "id invalid pour le produit"});
