@@ -37,14 +37,13 @@ module.exports = function(app){
 
     app.get("/update/:id" , (req , rep) => {
         const id = req.params.id ;
-        console.log(id)
-        rep.render("update" , { produit : {nom : "toto" , prix : 10 , id : id }})
-           /* axios.get(`https://lit-island-18380.herokuapp.com/produit/${id}`)
+        //rep.render("update" , { produit : {nom : "toto" , prix : 10 , id : id }})
+            axios.get(`https://lit-island-18380.herokuapp.com/produit/${id}`)
             .then(({data}) => {
                 console.log(data);
                 rep.render("update" , { produit : data })
             })
-            .catch((ex) => console.log(ex))  */
+            .catch((ex) => console.log(ex))  
     })
 
     // url 635a64ad6bc70a459d3a2c65

@@ -1,17 +1,16 @@
-extends layout 
+extends layout
 
 block page_titre
-    title mettre à jour le produit 
+    title mettre à jour le produit #{produit.nom}
 block page_meta
-    meta(name="description" value="mettre à jour le produit ")
+    meta(name="description" value=`mettre à jour le produit ${produit.nom}`)
 block page_contenu
-    h1.text-center mettre à jour le produit 
-
+    h1.text-center mettre à jour le produit #{produit.nom}
     .d-flex.justify-content-center
         form.w-50
-            input(type="text" name="nom" class="mb-3 form-control" id="nom" placeholder="nom produit" value="")
-            input(type="number" name="prix" class="mb-3 form-control" id="prix" placeholder="prix produit" value="")
-            input(type="date" name="dt_creation" class="mb-3 form-control" id="dt_creation" placeholder="dt_creation")
+            input(type="text" name="nom" class="mb-3 form-control" id="nom" placeholder="nom produit" value=`${produit.nom}`)
+            input(type="number" name="prix" class="mb-3 form-control" id="prix" placeholder="prix produit" value=`${produit.prix}`)
+            input(type="date" name="dt_creation" class="mb-3 form-control" id="dt_creation" placeholder="dt_creation"  value=`${new Date(produit.dt_creation)}`)
             .mb-3.d-flex.align-items-center
                 input(type="checkbox" name="isPublished" class="form-check-input me-2" id="isPublished" checked)
                 label(for="isPublished") Publié l'article

@@ -13,4 +13,16 @@
                 a(href="/admin" class="nav-link") Admin
             li.nav-item.connexion
                 a(href="/deconnexion" class="nav-link") Déconnexion
-script(src="menu-top.js") 
+script.
+    ;(function(){
+        const verif = localStorage.getItem("token");
+        if(verif == null) {
+            document.querySelectorAll(".connexion").forEach((el) => {
+                el.remove();
+            });
+        }else {
+            document.querySelectorAll(".deconnexion").forEach((el) => {
+                el.remove();
+            });
+        }
+    })();
