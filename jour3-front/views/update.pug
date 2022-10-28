@@ -8,6 +8,7 @@ block page_contenu
     h1.text-center mettre à jour le produit #{produit.nom}
     .d-flex.justify-content-center
         form.w-50
+            input(type="hidden" name="id" value=`${produit._id}`)
             input(type="text" name="nom" class="mb-3 form-control" id="nom" placeholder="nom produit" value=`${produit.nom}`)
             input(type="number" name="prix" class="mb-3 form-control" id="prix" placeholder="prix produit" value=`${produit.prix}`)
             - var dt = new Date(produit.dt_creation).getFullYear() + "-" + (new Date(produit.dt_creation).getMonth() + 1 ) + "-" + new Date(produit.dt_creation).getDate()
