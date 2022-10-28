@@ -61,6 +61,38 @@ router.delete("/produit/:id" , auth , async(req , rep) => {
 
 } )
 
+router.put("/produit/:id" , auth , async (req, rep) => {
+    // récupérer l'id du produit à mettre à jour
+    const id = req.params.id ;
+    const produit = req.body ;
+
+    if(!Types.ObjectId.isValid(id)) return rep.status(400).json({msg : "id invalid pour le produit"});
+
+    const {value , error} = produitValide.validate(produit , {abortEarly : false});
+
+    if(error){
+        let message = [];
+        error.details.forEach((erreur) => {
+            message.push(erreur.message)
+        })
+        return rep.status(400).json({msg : message})
+    }
+
+    let produitAMettreAJour = await produitModel.findById(id);
+
+    if(produitAMettreAJour == null) return rep.status(404).json({msg : "produit introuvable"});
+
+    produitAMettreAJour.nom = produit.nom;
+    produitAMettreAJour.prix = produit.prix;
+    produitAMettreAJour.dt_creation = produit.dt_creation;
+    produitAMettreAJour.isPublished = produit.isPublished;
+
+    produitAMettreAJour = await produitAMettreAJour.save();
+
+    rep.json({msg : "ok" , produit : produitAMettreAJour});
+
+})
+
 // cas pratique :
 // créer les tests d'intégration pour tester la création de produit 
 // envoie pas de token => erreur 401

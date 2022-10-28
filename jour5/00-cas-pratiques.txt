@@ -3,3 +3,31 @@ Cas pratique :
 remplir correctement le champ date
 remplir correctement le champ checkbox true => checked false non checked 
 
+------------------
+
+cas Pratique
+
+dans l'API ajouter une nouvelle route 
+PUT 
+qui prendre le produit et le mettre à jour dans la table concernée 
+méthode PUT 
+route produit/:id 
+
+avant de faire la mise à jour vous devez réalisez des vérifications préalables 
+
+?? => est ce que l id du produit est valide ?? => sinon erreur 400
+?? est que le produit produit transmis existe => sinon erreur 404
+?? est ce que les champs transmis du produit sont valides => sinon erreur 400
+
+=> effectuer la mise à jour !! 
+
+----
+
+Cas pratique sur la partie client
+
+pouvez vous récupérer les informations saisies dans le formulaire d'update 
+et les transférer vers votre API 
+
+vérifier au préalable que tous les champs sont remplis avant de lancer al requête AJAX 
+
+
