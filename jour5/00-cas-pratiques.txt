@@ -1,0 +1,5 @@
+Cas pratique :
+
+remplir correctement le champ date
+remplir correctement le champ checkbox true => checked false non checked 
+

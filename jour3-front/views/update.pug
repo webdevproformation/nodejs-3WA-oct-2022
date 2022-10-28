@@ -10,9 +10,15 @@ block page_contenu
         form.w-50
             input(type="text" name="nom" class="mb-3 form-control" id="nom" placeholder="nom produit" value=`${produit.nom}`)
             input(type="number" name="prix" class="mb-3 form-control" id="prix" placeholder="prix produit" value=`${produit.prix}`)
-            input(type="date" name="dt_creation" class="mb-3 form-control" id="dt_creation" placeholder="dt_creation"  value=`${new Date(produit.dt_creation)}`)
+            - var dt = new Date(produit.dt_creation).getFullYear() + "-" + (new Date(produit.dt_creation).getMonth() + 1 ) + "-" + new Date(produit.dt_creation).getDate()
+            input(type="date" name="dt_creation" class="mb-3 form-control" id="dt_creation" placeholder="dt_creation"  value=`${dt}`)
             .mb-3.d-flex.align-items-center
-                input(type="checkbox" name="isPublished" class="form-check-input me-2" id="isPublished" checked)
-                label(for="isPublished") Publié l'article
+                - if(produit.isPublished) {
+                    input(type="checkbox" name="isPublished" class="form-check-input me-2" id="isPublished" checked)
+                    label(for="isPublished") Publié l'article
+                - } else { 
+                    input(type="checkbox" name="isPublished" class="form-check-input me-2" id="isPublished" )
+                    label(for="isPublished") Publié l'article
+                - }
             .text-center
                 input(type="submit" class="btn btn-outline-primary")
