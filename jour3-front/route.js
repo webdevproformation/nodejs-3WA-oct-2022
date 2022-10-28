@@ -43,6 +43,9 @@ module.exports = function(app){
             .then(({data}) => {
                 rep.render("single" , { produit : data })
             })
+            .catch((ex) => {
+                rep.render("404");
+            })
     })
 
     app.get("/update/:id" , (req , rep) => {

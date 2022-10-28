@@ -36,11 +36,11 @@ router.post("/new" , auth , async (req,rep) => {
 
 router.get("/produit/:id" , async (req, rep) => {
     const id = req.params.id ;
-    if(!Types.ObjectId.isValid(id)) return rep.status(400).send("id du produit invalid");
+    if(!Types.ObjectId.isValid(id)) return rep.status(400).json({msg :"id du produit invalid" });
     // vérifier que l'id est correct 
     const produitRecherche = await produitModel.findOne({ _id : id});
 
-    if(!produitRecherche) return rep.status(404).send(`le produit ayant l'id ${id} n'existe pas`);
+    if(!produitRecherche) return rep.status(404).json({msg :`le produit ayant l'id ${id} n'existe pas`});
 
     rep.json(produitRecherche);
 })
