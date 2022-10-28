@@ -52,7 +52,7 @@ si vous n'avez aucun produit publié et true => affiche un message disant "Aucun
 
 Cas pratique :
 
-Dans la page d'accueil à la page des ... => lien hypertexte => voir la page produit 
+Dans la page d'accueil à la place des ... => remplacer par un lien hypertexte => voir la page produit 
 
 Créer une nouvelle route dans le front qui permet d'afficher uniquement 1 seul produit 
 
