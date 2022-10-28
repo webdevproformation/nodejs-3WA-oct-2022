@@ -30,4 +30,4 @@ et les transférer vers votre API
 
 vérifier au préalable que tous les champs sont remplis avant de lancer al requête AJAX 
 
-
+// rdv 11h25 bon café @ toute suite !!!

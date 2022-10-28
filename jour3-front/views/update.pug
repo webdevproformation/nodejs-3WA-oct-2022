@@ -8,7 +8,7 @@ block page_contenu
     h1.text-center mettre à jour le produit #{produit.nom}
     .d-flex.justify-content-center
         form.w-50
-            input(type="hidden" name="id" value=`${produit._id}`)
+            input(type="hidden" name="id" value=`${produit._id}` id="id")
             input(type="text" name="nom" class="mb-3 form-control" id="nom" placeholder="nom produit" value=`${produit.nom}`)
             input(type="number" name="prix" class="mb-3 form-control" id="prix" placeholder="prix produit" value=`${produit.prix}`)
             - var dt = new Date(produit.dt_creation).getFullYear() + "-" + (new Date(produit.dt_creation).getMonth() + 1 ) + "-" + new Date(produit.dt_creation).getDate()
@@ -23,3 +23,41 @@ block page_contenu
                 - }
             .text-center
                 input(type="submit" class="btn btn-outline-primary")
+    script.
+        const verif = localStorage.getItem("token");
+        if(verif == null) window.location.href = "/connexion";
+
+        document.querySelector("form").addEventListener("submit" , e => {
+            e.preventDefault();
+            const id = document.querySelector("#id").value;
+            const nom = document.querySelector("#nom").value;
+            const prix = document.querySelector("#prix").value;
+            const dt_creation = document.querySelector("#dt_creation").value;
+
+            if( id.length == 0 || nom.length == 0 || prix.length == 0 || dt_creation.length == 0 ) return alert("stop");
+            const formData = new FormData(e.target);
+            const values = [ ...formData.entries() ];
+            let publie = false ;
+            if(values[4]) publie = true ;
+            
+            const produitMisAjour = {
+                nom  :nom ,
+                dt_creation : new Date(dt_creation).toISOString() ,
+                isPublished : publie,
+                prix : parseInt(prix)
+            };
+
+            const option = {
+                method : "PUT",
+                headers : {
+                    "Content-type" : "application/json",
+                    "x-auth-token" : localStorage.getItem("token")
+                },
+                body : JSON.stringify(produitMisAjour)
+            };
+
+            fetch( `https://lit-island-18380.herokuapp.com/produit/${id}` ,  option)
+                .then(reponse => reponse.json())
+                .then(console.log)
+
+        });
