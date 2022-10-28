@@ -15,7 +15,10 @@ module.exports = function(app){
     // fin des paramètrages de pug 
 
     app.get("/" , (req, rep) => {
-        rep.render("index")
+        axios.get("https://lit-island-18380.herokuapp.com/data").then(({data}) => {
+            rep.render("index" , {catalogue : data.filter(produit  => produit.isPublished)})
+        })
+        
     })
     app.get("/creer-user" , (req, rep) => {
         rep.render("creer-user")

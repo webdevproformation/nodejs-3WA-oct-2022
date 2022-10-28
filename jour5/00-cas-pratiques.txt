@@ -39,3 +39,12 @@ Cas pratique une fois que la mise à jour est effectuée
 
 => afficher un message pour dire que c'est fait 
 => rediriger vers la page d'accueil de l'administration 
+
+--- 
+
+Cas pratique 
+
+dans la page d'accueil du client afficher tous les produits qui sont disponibles dans le catalogue
+afficher uniquement ceux qui sont le status publié à true 
+si vous n'avez aucun produit publié et true => affiche un message disant "Aucun produit disponible pour l'instant"
+

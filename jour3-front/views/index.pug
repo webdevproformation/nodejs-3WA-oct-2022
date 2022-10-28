@@ -7,3 +7,16 @@ block page_meta
 block page_contenu
     h1 Bienvenu sur la page d'accueil
     p Lorem ipsum dolor sit amet consectetur adipisicing elit. Et, impedit?
+    .row
+        - if(catalogue.length == 0){
+            p Aucun produit disponible pour l'instant
+        - } else { 
+            each produit in catalogue 
+                div.col-3 
+                    article.card 
+                        h2.card-header #{produit.nom} 
+                        img(src="https://via.placeholder.com/500x200?text=img produit", alt="")
+                        - var prixFr = produit.prix.toFixed(2) + " € HT"
+                        .card-body.text-end #{prixFr} 
+                        footer.card-footer ... 
+        - }
