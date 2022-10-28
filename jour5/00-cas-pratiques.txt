@@ -57,3 +57,16 @@ Dans la page d'accueil à la place des ... => remplacer par un lien hypertexte =
 Créer une nouvelle route dans le front qui permet d'afficher uniquement 1 seul produit 
 
 et vous affichez un seul produit 
+
+// rdv 14h00 bon appétit !!!
+
+--- 
+
+Cas pratique :
+
+1 Modifier le back => route appel un produit => send() => reponse .json()
+uploader les modifications sur heroku 
+
+2 Dans le front si on a une erreur interceptée  (catch ) = > afficher une page 404 
+
+

@@ -41,7 +41,6 @@ module.exports = function(app){
         const id = req.params.id ;
         axios.get(`https://lit-island-18380.herokuapp.com/produit/${id}`)
             .then(({data}) => {
-                console.log(data);
                 rep.render("single" , { produit : data })
             })
     })
