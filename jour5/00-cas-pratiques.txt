@@ -97,4 +97,19 @@ Dans la page d'accueil
 - ajouter dans sous chaque article un bouton pour liker avec un compteur 
 - lorsque l'on clique sur le bouton => augmenter de +1 le nombre de like de l'article concerné 
 
+---
+
+Cas pratique 
+
+mettre en ligne sur Heroku la partie front 
+créer un nouveau projet sur Heroku 
+adapter le fichier package.json 
+réaliser les commandes nécessaires pour publier votre projet sur l'hébergeur 
+
+-------
+
+Cas pratique fin 
+
+https://dry-citadel-76089.herokuapp.com/
+
 
