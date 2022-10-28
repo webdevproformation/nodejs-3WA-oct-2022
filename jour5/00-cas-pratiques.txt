@@ -88,3 +88,13 @@ modifier dans l'API la table pour pouvoir accepter une nouvelle propriété like
 par défaut elle vaut 0 
 
 => ajouter une nouvelle route pour mettre à jour le produit patch 
+
+---
+
+Cas pratique
+
+Dans la page d'accueil 
+- ajouter dans sous chaque article un bouton pour liker avec un compteur 
+- lorsque l'on clique sur le bouton => augmenter de +1 le nombre de like de l'article concerné 
+
+
