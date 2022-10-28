@@ -76,3 +76,15 @@ Cas pratique :
 suite à l'ajout d'un nouveau produit 
 ajouter un message pour annoncé le produit a bien été ajouté +
 ajouter une nouvelle ligne dans le catalogue situé en dessous du formulaire d'ajout 
+
+
+---
+
+Bon café => 15h20 !!!
+
+Cas pratique :
+
+modifier dans l'API la table pour pouvoir accepter une nouvelle propriété like 
+par défaut elle vaut 0 
+
+=> ajouter une nouvelle route pour mettre à jour le produit patch 
