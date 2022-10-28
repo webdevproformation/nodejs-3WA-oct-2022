@@ -69,4 +69,10 @@ uploader les modifications sur heroku
 
 2 Dans le front si on a une erreur interceptée  (catch ) = > afficher une page 404 
 
+--- 
 
+Cas pratique :
+
+suite à l'ajout d'un nouveau produit 
+ajouter un message pour annoncé le produit a bien été ajouté +
+ajouter une nouvelle ligne dans le catalogue situé en dessous du formulaire d'ajout 
